@@ -1,0 +1,553 @@
+/* ============================================
+   UNO ILEBAKKE - Responsive Styles
+   Mobile-first approach
+   ============================================ */
+
+/* ============================================
+   TABLET (768px and up)
+   ============================================ */
+@media (max-width: 1024px) {
+    :root {
+        --text-4xl: 2rem;
+        --text-3xl: 1.5rem;
+    }
+
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+
+    .section {
+        padding: var(--spacing-3xl) 0;
+    }
+
+    /* Header */
+    .header__inner {
+        padding: 0 var(--spacing-md);
+    }
+
+    .nav__list {
+        gap: var(--spacing-md);
+    }
+
+    /* Hero */
+    .hero__inner {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-2xl);
+        text-align: center;
+    }
+
+    .hero__content {
+        order: 1;
+    }
+
+    .hero__image {
+        order: 2;
+    }
+
+    .hero__ctas {
+        justify-content: center;
+    }
+
+    .hero__contact {
+        justify-content: center;
+    }
+
+    .hero__image-wrapper img {
+        height: 400px;
+    }
+
+    /* Services Grid */
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Features */
+    .features {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-2xl);
+    }
+
+    .features__image {
+        order: -1;
+    }
+
+    /* Coverage */
+    .coverage__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Service Detail */
+    .service-detail {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-2xl);
+    }
+
+    .service-detail:nth-child(even) {
+        direction: ltr;
+    }
+
+    .service-detail__image {
+        order: -1;
+    }
+
+    /* About */
+    .about-intro {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-2xl);
+    }
+
+    .about-intro__image {
+        order: -1;
+    }
+
+    /* Values */
+    .values__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Contact */
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info {
+        order: 1;
+    }
+
+    .contact-form {
+        order: 2;
+    }
+
+    /* Footer */
+    .footer__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-xl);
+    }
+
+    .footer__brand {
+        grid-column: span 2;
+    }
+}
+
+/* ============================================
+   MOBILE (767px and below)
+   ============================================ */
+@media (max-width: 767px) {
+    :root {
+        --header-height: 70px;
+        --text-4xl: 1.75rem;
+        --text-3xl: 1.375rem;
+        --text-2xl: 1.25rem;
+        --text-xl: 1.125rem;
+    }
+
+    body {
+        font-size: 15px;
+    }
+
+    .section {
+        padding: var(--spacing-2xl) 0;
+    }
+
+    /* Header & Navigation */
+    .header {
+        height: var(--header-height);
+    }
+
+    .header__logo-text {
+        font-size: var(--text-lg);
+    }
+
+    .header__logo-tagline {
+        display: none;
+    }
+
+    .nav {
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: var(--color-white);
+        flex-direction: column;
+        padding: var(--spacing-xl);
+        gap: var(--spacing-xl);
+        transform: translateX(100%);
+        transition: transform var(--transition-normal);
+        overflow-y: auto;
+    }
+
+    .nav.active {
+        transform: translateX(0);
+    }
+
+    .nav__list {
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+    }
+
+    .nav__link {
+        display: block;
+        padding: var(--spacing-md) 0;
+        border-bottom: 1px solid var(--color-border-light);
+        font-size: var(--text-lg);
+    }
+
+    .nav__link::after {
+        display: none;
+    }
+
+    .nav__cta {
+        width: 100%;
+        justify-content: center;
+        padding: var(--spacing-md);
+        font-size: var(--text-lg);
+    }
+
+    .nav__toggle {
+        display: flex;
+    }
+
+    .nav__toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .nav__toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav__toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* Hero */
+    .hero {
+        min-height: auto;
+        padding-top: calc(var(--header-height) + var(--spacing-2xl));
+        padding-bottom: var(--spacing-2xl);
+    }
+
+    .hero__badge {
+        font-size: var(--text-xs);
+    }
+
+    .hero__title {
+        font-size: 1.75rem;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .hero__subtitle {
+        font-size: var(--text-base);
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .hero__ctas {
+        flex-direction: column;
+    }
+
+    .hero__ctas .btn {
+        width: 100%;
+    }
+
+    .hero__contact {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        align-items: center;
+    }
+
+    .hero__image-wrapper img {
+        height: 280px;
+    }
+
+    .hero__image-badge {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        margin-top: calc(-1 * var(--spacing-xl));
+        margin-left: var(--spacing-md);
+        margin-right: var(--spacing-md);
+    }
+
+    /* Services Grid */
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .service-card {
+        padding: var(--spacing-lg);
+    }
+
+    .service-card__icon {
+        width: 48px;
+        height: 48px;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .service-card__icon svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    /* Features */
+    .features__list {
+        gap: var(--spacing-lg);
+    }
+
+    /* Coverage */
+    .coverage__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-sm);
+    }
+
+    .coverage__item {
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: var(--text-sm);
+    }
+
+    /* Trust */
+    .trust__ctas {
+        flex-direction: column;
+    }
+
+    .trust__ctas .btn {
+        width: 100%;
+    }
+
+    /* CTA Section */
+    .cta-section {
+        padding: var(--spacing-2xl) 0;
+    }
+
+    .cta-section__buttons {
+        flex-direction: column;
+    }
+
+    .cta-section__buttons .btn {
+        width: 100%;
+    }
+
+    /* Page Header */
+    .page-header {
+        padding-top: calc(var(--header-height) + var(--spacing-2xl));
+        padding-bottom: var(--spacing-2xl);
+    }
+
+    .page-header h1 {
+        font-size: 1.75rem;
+    }
+
+    /* Service Detail */
+    .service-detail__list li {
+        font-size: var(--text-sm);
+    }
+
+    /* Pricing */
+    .pricing__table {
+        padding: var(--spacing-md);
+    }
+
+    .pricing__row {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+        text-align: center;
+    }
+
+    /* Values */
+    .values__grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .value-card {
+        padding: var(--spacing-lg);
+    }
+
+    /* Coverage Detail */
+    .coverage-detail ul {
+        grid-template-columns: 1fr;
+    }
+
+    /* Contact Form */
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info,
+    .contact-form {
+        padding: var(--spacing-lg);
+    }
+
+    /* Footer */
+    .footer__main {
+        padding: var(--spacing-2xl) 0;
+    }
+
+    .footer__grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+        text-align: center;
+    }
+
+    .footer__brand {
+        grid-column: span 1;
+    }
+
+    .footer__logo {
+        justify-content: center;
+    }
+
+    .footer__contact-item {
+        justify-content: center;
+    }
+
+    .footer__bottom-inner {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        text-align: center;
+    }
+
+    /* Buttons */
+    .btn--large {
+        padding: var(--spacing-md) var(--spacing-xl);
+        font-size: var(--text-base);
+    }
+}
+
+/* ============================================
+   SMALL MOBILE (480px and below)
+   ============================================ */
+@media (max-width: 480px) {
+    :root {
+        --text-4xl: 1.5rem;
+        --text-3xl: 1.25rem;
+    }
+
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+
+    .hero__title {
+        font-size: 1.5rem;
+    }
+
+    .hero__image-wrapper img {
+        height: 220px;
+    }
+
+    .service-card__title {
+        font-size: var(--text-base);
+    }
+
+    .coverage__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .intro__text {
+        font-size: var(--text-base);
+    }
+}
+
+/* ============================================
+   LARGE SCREENS (1200px and up)
+   ============================================ */
+@media (min-width: 1200px) {
+    .container {
+        padding: 0 var(--spacing-xl);
+    }
+
+    .hero__image-wrapper img {
+        height: 550px;
+    }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+@media print {
+    .header,
+    .nav,
+    .footer,
+    .btn,
+    .hero__image,
+    .cta-section {
+        display: none !important;
+    }
+
+    body {
+        background: white;
+        color: black;
+        font-size: 12pt;
+    }
+
+    .section {
+        padding: 1rem 0;
+    }
+
+    a {
+        color: black;
+        text-decoration: underline;
+    }
+
+    h1, h2, h3, h4 {
+        color: black;
+        page-break-after: avoid;
+    }
+
+    p {
+        orphans: 3;
+        widows: 3;
+    }
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ============================================
+   HIGH CONTRAST MODE
+   ============================================ */
+@media (prefers-contrast: high) {
+    :root {
+        --color-border: #333;
+        --color-text-light: #333;
+        --color-text-muted: #444;
+    }
+
+    .btn {
+        border-width: 3px;
+    }
+
+    .service-card,
+    .contact-info,
+    .contact-form {
+        border: 2px solid var(--color-primary);
+    }
+}
+
+/* ============================================
+   DARK MODE (Future Enhancement)
+   ============================================ */
+@media (prefers-color-scheme: dark) {
+    /*
+    Can be enabled in the future:
+    :root {
+        --color-background: #1a1a2e;
+        --color-white: #16213e;
+        --color-text: #e8e8e8;
+        --color-text-light: #b8b8b8;
+        --color-border: #2a2a4a;
+    }
+    */
+}
